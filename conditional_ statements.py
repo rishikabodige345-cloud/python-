@@ -1,60 +1,69 @@
 
-### 1. Check whether a number is positive
+### 1. Check whether a character is vowel or consonant
 
 ```python
-num = 10
+ch = input("Enter a character: ")
 
-if num > 0:
-    print("Positive")
-```
-
-### 2. Check if a person is eligible to vote
-
-```python
-age = 20
-
-if age >= 18:
-    print("Eligible to Vote")
-```
-
-### 3. Check whether a number is even or odd
-
-```python
-num = 7
-
-if num % 2 == 0:
-    print("Even")
+if ch in "aeiouAEIOU":
+    print("Vowel")
 else:
-    print("Odd")
+    print("Consonant")
 ```
 
-### 4. Compare two numbers and print the larger number
+### 2. Check whether a number is divisible by both 3 and 5
 
 ```python
-num1 = 20
-num2 = 15
+num = int(input("Enter a number: "))
 
-if num1 > num2:
-    print(num1, "is greater")
+if num % 3 == 0 and num % 5 == 0:
+    print("Divisible by both 3 and 5")
 else:
-    print(num2, "is greater")
+    print("Not divisible by both 3 and 5")
 ```
 
-### 5. Check whether a student passed or failed
+### 3. Check whether a character is uppercase, lowercase, digit, or special symbol
 
 ```python
-marks = 50
+ch = input("Enter a character: ")
 
-if marks >= 35:
-    print("Pass")
+if ch.isupper():
+    print("Uppercase")
+elif ch.islower():
+    print("Lowercase")
+elif ch.isdigit():
+    print("Digit")
 else:
-    print("Fail")
+    print("Special Symbol")
+```
+
+### 4. Check whether a number is divisible by 7
+
+```python
+num = int(input("Enter a number: "))
+
+if num % 7 == 0:
+    print("Divisible by 7")
+else:
+    print("Not divisible by 7")
+```
+
+### 5. Check whether a person is a senior citizen
+
+```python
+age = int(input("Enter age: "))
+
+if age >= 60:
+    print("Senior Citizen")
+else:
+    print("Not a Senior Citizen")
 ```
 
 ### 6. Check whether a year is a leap year
 
+Since your assignment says to assume the year is divisible by 4:
+
 ```python
-year = 2024
+year = int(input("Enter year: "))
 
 if year % 4 == 0:
     print("Leap Year")
@@ -62,186 +71,100 @@ else:
     print("Not a Leap Year")
 ```
 
-### 7. Check whether a number is divisible by 5
+### 7. Simple calculator (+, -, *, /)
 
 ```python
-num = 25
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+operator = input("Enter operator (+, -, *, /): ")
 
-if num % 5 == 0:
-    print("Divisible by 5")
+if operator == "+":
+    print("Result =", num1 + num2)
+elif operator == "-":
+    print("Result =", num1 - num2)
+elif operator == "*":
+    print("Result =", num1 * num2)
+elif operator == "/":
+    if num2 != 0:
+        print("Result =", num1 / num2)
+    else:
+        print("Cannot divide by zero")
 else:
-    print("Not divisible by 5")
+    print("Invalid Operator")
 ```
 
-### 8. Check whether a character is a vowel or consonant
-
-```python
-ch = "i"
-
-if ch in "aeiou":
-    print("Vowel")
-else:
-    print("Consonant")
-```
-
-### 9. Check whether a number is positive, negative, or zero
+### 8. Check whether a number is in the range 1 to 100
 
 ```python
 num = int(input("Enter a number: "))
 
-if num > 0:
-    print("The number is Positive")
-elif num < 0:
-    print("The number is Negative")
+if num >= 1 and num <= 100:
+    print("Number is in the range 1 to 100")
 else:
-    print("The number is Zero")
+    print("Number is not in the range 1 to 100")
 ```
 
-### 10. Assign grades based on marks
+### 9. Input marks of 3 subjects and check pass/fail
+
+A student passes only if **all three subjects are 35 or above**.
 
 ```python
-marks = 85
+mark1 = int(input("Enter marks of subject 1: "))
+mark2 = int(input("Enter marks of subject 2: "))
+mark3 = int(input("Enter marks of subject 3: "))
 
-if marks >= 90:
-    print("Grade A")
-elif marks >= 75:
-    print("Grade B")
-elif marks >= 50:
-    print("Grade C")
+if mark1 >= 35 and mark2 >= 35 and mark3 >= 35:
+    print("Pass")
 else:
-    print("Grade F")
+    print("Fail")
 ```
 
-### 11. Check whether a person is a child, teenager, adult, or senior citizen
+### 10. Check whether a number is a multiple of 3 and 5 separately
 
 ```python
-age = 25
+num = int(input("Enter a number: "))
 
-if age < 13:
-    print("Child")
-elif age < 20:
-    print("Teenager")
-elif age < 60:
-    print("Adult")
+if num % 3 == 0:
+    print("Multiple of 3")
 else:
-    print("Senior Citizen")
+    print("Not a multiple of 3")
+
+if num % 5 == 0:
+    print("Multiple of 5")
+else:
+    print("Not a multiple of 5")
 ```
 
-### 12. Find the largest of three numbers
+### 11. Simulate ATM withdrawal
 
 ```python
-a = 10
-b = 20
-c = 30
+balance = 10000
+amount = int(input("Enter withdrawal amount: "))
 
-if a > b and a > c:
-    print(a, "is largest")
-elif b > a and b > c:
-    print(b, "is largest")
+if amount <= balance:
+    balance = balance - amount
+    print("Withdrawal Successful")
+    print("Remaining Balance =", balance)
 else:
-    print(c, "is largest")
+    print("Insufficient Balance")
 ```
 
-### 13. Check whether a number is a multiple of both 3 and 5
+### 12. Calculate tax based on salary slabs
+
+If your assignment doesn't specify different slabs, a common simple version is:
 
 ```python
-num = 30
+salary = float(input("Enter salary: "))
 
-if num % 3 == 0 and num % 5 == 0:
-    print("The number is a multiple of both 3 and 5")
+if salary <= 250000:
+    tax = 0
+elif salary <= 500000:
+    tax = salary * 0.05
+elif salary <= 1000000:
+    tax = salary * 0.20
 else:
-    print("The number is not a multiple of both 3 and 5")
-```
+    tax = salary * 0.30
 
-### 14. Check the password
-
-```python
-password = "python123"
-
-if password == "python123":
-    print("Access Granted")
-else:
-    print("Access Denied")
-```
-
-### 15. Display the day of the week
-
-```python
-day = 4
-
-if day == 1:
-    print("Monday")
-elif day == 2:
-    print("Tuesday")
-elif day == 3:
-    print("Wednesday")
-elif day == 4:
-    print("Thursday")
-elif day == 5:
-    print("Friday")
-elif day == 6:
-    print("Saturday")
-elif day == 7:
-    print("Sunday")
-else:
-    print("Invalid Day")
-```
-
-### 16. Calculate discount
-
-```python
-amount = 5000
-
-if amount >= 5000:
-    print("20% Discount")
-elif amount >= 2000:
-    print("10% Discount")
-else:
-    print("No Discount")
-```
-
-### 17. Determine the season based on month
-
-```python
-month = 7
-
-if month == 12 or month == 1 or month == 2:
-    print("Winter")
-elif month == 3 or month == 4 or month == 5:
-    print("Summer")
-elif month == 6 or month == 7 or month == 8:
-    print("Rainy")
-elif month == 9 or month == 10 or month == 11:
-    print("Autumn")
-else:
-    print("Invalid Month")
-```
-
-### 18. Electricity bill category
-
-```python
-units = 250
-
-if units <= 100:
-    print("Low Usage")
-elif units <= 300:
-    print("Medium Usage")
-else:
-    print("High Usage")
-```
-
-### 19. Check divisibility by 2 and 3
-
-```python
-num = 12
-
-if num % 2 == 0 and num % 3 == 0:
-    print("Divisible by both")
-elif num % 2 == 0:
-    print("Divisible by 2")
-elif num % 3 == 0:
-    print("Divisible by 3")
-else:
-    print("Not divisible by 2 or 3")
+print("Tax =", tax)
 ```
 
